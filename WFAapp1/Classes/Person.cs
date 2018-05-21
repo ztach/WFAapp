@@ -8,7 +8,7 @@ namespace WFAapp1.Classes
 {
     class Person
     {
-        public int PersonId;
+        public int OsobaId;
         public string ImieNazwisko;
         public string KodMiasto;
         public string ulicaNr;

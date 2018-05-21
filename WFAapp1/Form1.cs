@@ -45,7 +45,7 @@ namespace WFAapp1
             myAdapter.Fill(myDataSet, "Persons");
             //myDataSet.Tables["Person"].
             //object[] rowVals = new object[2];
-
+            string wektor = "";
 
             foreach(DataTable myTable in myDataSet.Tables)
             {
@@ -53,7 +53,12 @@ namespace WFAapp1
                 {
                     foreach(DataColumn myColumn in myTable.Columns)
                     {
+                        wektor += myRow[myColumn];
+                        /*List<Person> person = new List<Person>
+                        {
+                            new Person(myRow[myColumn].ToString());
 
+                        };*/
                     }
                 }
             }
