@@ -92,6 +92,11 @@
     </Compile>
     <None Include="Baza\Ksiazki.s3db" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\WFAapp1.Classes.Person.datasource" />
+    <None Include="Properties\DataSources\WFAapp1.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\WFAapp1.Properties.Settings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
