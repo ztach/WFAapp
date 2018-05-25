@@ -59,16 +59,15 @@ namespace WFAapp1.Classes
 
             try
             {
-                SQLiteDataReader rd;
-                rd = sqlCommandmd.ExecuteReader();
-                return rd.ToString();
-
+                object result = sqlCommandmd.ExecuteScalar();
+                return (result == null ? "" : result.ToString());
             }
             finally
             {
                 CloseConnection();
             }
         }
+
 
         public object ShowDataInGridView(string sql)
         {
