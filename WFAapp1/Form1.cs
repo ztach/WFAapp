@@ -19,19 +19,17 @@ namespace WFAapp1
       
         BindingSource bsOsoba = new BindingSource();
         BindingSource bsWypozyczenia = new BindingSource();
-        public string conPath ;
-        public string conFile ;
 
         public Form1()
         {
             InitializeComponent();
         }
 
-
+        Menu m = new Menu();
         private void btnOpenDataBase_Click(object sender, EventArgs e)
         {
             string query = "select * from Osoba";
-            ConnectCls myConn = new ConnectCls(conPath, conFile);
+            ConnectCls myConn = new ConnectCls(InitConnection.conPath, InitConnection.conFile);
             myConn.OpenConnection();
             bsOsoba.DataSource = myConn.ShowDataInGridView(query);
             dataGridView1.DataSource = bsOsoba;
@@ -46,13 +44,13 @@ namespace WFAapp1
 
             string query = "select distinct imieNazwisko || ' ' || kodMiasto || ' ' || UlicaNr as adres" +
                 " from KtoCoKiedyWypozyczylView where osobaId=" + lblOsobaId.Text;
-            ConnectCls myConnn = new ConnectCls(conPath, conFile);
+            ConnectCls myConnn = new ConnectCls(InitConnection.conPath, InitConnection.conFile);
             myConnn.OpenConnection();
             txtWynik.Text = myConnn.SqlExecuteOneValue(query);
 
 
             query = "select autor,tytul,odKiedy,DoKiedy,czas  from KtoCoKiedyWypozyczylView where osobaId=" + lblOsobaId.Text;
-            //ConnectCls myConnn = new ConnectCls(conPath, conFile);
+            
             myConnn.OpenConnection();
             bsWypozyczenia.DataSource = myConnn.ShowDataInGridView(query);
             dataGridView2.DataSource = bsWypozyczenia;
@@ -64,39 +62,8 @@ namespace WFAapp1
         private void Form1_Load(object sender, EventArgs e)
         {
             lblOsobaId.Text = "1";
-
-            var MyIni = new IniFile();
-
-            if(!MyIni.KeyExists("myConPath", "CONNECT"))
-            {
-                MyIni.Write("myConPath", @"f:\praca\WFAapp\WFAapp1\Baza\", "CONNECT");
-            }
-
-            if (!MyIni.KeyExists("myConFile", "CONNECT"))
-            {
-                MyIni.Write("myConFile", @"Ksiazki.s3db", "CONNECT");
-            }
-
-            conPath = MyIni.Read("myConPath", "CONNECT");
-            conFile = MyIni.Read("myConFile", "CONNECT");
-
-            if (!File.Exists(conPath + conFile))
-            {
-                MessageBox.Show(
-                    " podana ścieżka: " + conPath + " jest niepawidłowa!!!\n"+
-                    "                 lub\n"+
-                    " podany plik: " + conFile + " jest nieprawidlowy !!!!"+
-                    "\n\n"+
-                    "puszukaj pliku .ini i zmień dostęp!!!"+
-                    "\n\n"+
-                    "           szczegóły opisałem w pomocy (Help)"
-                    );
-                this.Close();
-            }
-
-
-
         }
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -111,10 +78,6 @@ namespace WFAapp1
         {
             frmInsertPerson frm = new frmInsertPerson();
             frm.Show();
-          
-          //  MessageBox.Show (p.ImieNazwisko);
-
-            
         }
     }
 }

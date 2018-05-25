@@ -20,23 +20,27 @@ namespace WFAapp1
 
         //Person p;
 
+        Menu m = new Menu();
+
         private void btnZapiszPerson_Click(object sender, EventArgs e)
         {
-            Form1 f = new Form1();
+            
 
-          ConnectCls myConnd = new ConnectCls(f.conPath, f.conFile);
+          ConnectCls myConnd = new ConnectCls(InitConnection.conPath, InitConnection.conFile);
           myConnd.OpenConnection();
           string s = myConnd.sqlInsert(txtImieNazwisko.Text,txtKodMiasto.Text, txtUlicaNr.Text, txtPesel.Text);
           myConnd.SqlCommandNonQuery(s);
-
-            this.Close();
-            this.Close();
             this.Close();
         }
 
         private void btnAnuluj_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmInsertPerson_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
