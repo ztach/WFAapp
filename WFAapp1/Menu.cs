@@ -144,42 +144,13 @@ namespace WFAapp1
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            /*
-            var MyIni = new IniFile();
-            
-
-            if (!MyIni.KeyExists("myConPath", "CONNECT"))
-            {
-                MyIni.Write("myConPath", @"f:\praca\WFAapp\WFAapp1\Baza\", "CONNECT");
-            }
-
-            if (!MyIni.KeyExists("myConFile", "CONNECT"))
-            {
-                MyIni.Write("myConFile", @"Ksiazki.s3db", "CONNECT");
-            }
-
-            InitConnection.conPath = MyIni.Read("myConPath", "CONNECT");
-            InitConnection.conFile = MyIni.Read("myConFile", "CONNECT");
-            */
-
             InitConnection.getIniFile();
             InitConnection.getIniPath();
-
-            if (!File.Exists(InitConnection.conPath + InitConnection.conFile))
+            if (!InitConnection.spraedzPlik())
             {
-                MessageBox.Show(
-                    " podana ścieżka: " + InitConnection.conPath + " jest niepawidłowa!!!\n" +
-                    "                 lub\n" +
-                    " podany plik: " + InitConnection.conFile + " jest nieprawidlowy !!!!" +
-                    "\n\n" +
-                    "puszukaj pliku .ini i zmień dostęp!!!" +
-                    "\n\n" +
-                    "           szczegóły opisałem w pomocy (Help)"
-                    );
-                this.Close();
+                Application.Exit();
             }
-
-            
+                
         }
         
     }

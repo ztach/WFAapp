@@ -25,38 +25,41 @@ namespace WFAapp1
             InitializeComponent();
         }
 
-        Menu m = new Menu();
-        private void btnOpenDataBase_Click(object sender, EventArgs e)
+
+        private void BtnOpenDataBase_Click(object sender, EventArgs e)
         {
-            string query = "select * from Osoba";
-            ConnectCls myConn = new ConnectCls(InitConnection.conPath, InitConnection.conFile);
-            myConn.OpenConnection();
-            bsOsoba.DataSource = myConn.ShowDataInGridView(query);
-            dataGridView1.DataSource = bsOsoba;
-            bindingNavigator1.BindingSource = bsOsoba;
-
-            myConn.CloseConnection();
-
+            string mquery = "select * from Osoba";
+            OpenDataBase odb = new OpenDataBase
+            {
+                query = mquery
+            };
+            
+            odb.BindingDataGrid(bsOsoba, dataGridView1, bindingNavigator1);
+            dataGridView1.Columns["OsobaId"].Visible = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
+            //
+            // pobieram informacje o osobie
+            //
+            string mquery = "select distinct imieNazwisko || ' ' || kodMiasto || ' ' || UlicaNr as adres" +
+                " from osoba where osobaId=" + lblOsobaId.Text;
 
-            string query = "select distinct imieNazwisko || ' ' || kodMiasto || ' ' || UlicaNr as adres" +
-                " from KtoCoKiedyWypozyczylView where osobaId=" + lblOsobaId.Text;
             ConnectCls myConnn = new ConnectCls(InitConnection.conPath, InitConnection.conFile);
-            myConnn.OpenConnection();
-            txtWynik.Text = myConnn.SqlExecuteOneValue(query);
-
-
-            query = "select autor,tytul,odKiedy,DoKiedy,czas  from KtoCoKiedyWypozyczylView where osobaId=" + lblOsobaId.Text;
             
-            myConnn.OpenConnection();
-            bsWypozyczenia.DataSource = myConnn.ShowDataInGridView(query);
-            dataGridView2.DataSource = bsWypozyczenia;
-            bindingNavigator2.BindingSource = bsWypozyczenia;
+            txtWynik.Text = myConnn.SqlExecuteOneValue(mquery);
 
-            myConnn.CloseConnection();
+            //
+            // pobieram informacje o wypożyczonych książkach osoby j.w.
+            //
+            mquery = "select autor,tytul,odKiedy,DoKiedy,czas  from KtoCoKiedyWypozyczylView where osobaId=" + lblOsobaId.Text;
+
+            OpenDataBase odb = new OpenDataBase
+            {
+                query = mquery
+            };
+            odb.BindingDataGrid(bsWypozyczenia, dataGridView2, bindingNavigator2);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -64,20 +67,51 @@ namespace WFAapp1
             lblOsobaId.Text = "1";
         }
 
+        
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void ReturnOsobaId(DataGridViewCellEventArgs ez)
         {
-            if (e.RowIndex >= 0)
+            if (ez.RowIndex >= 0)
             {
-                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                DataGridViewRow row = this.dataGridView1.Rows[ez.RowIndex];
                 lblOsobaId.Text = row.Cells[0].Value.ToString();
             }
+
         }
 
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ReturnOsobaId(e);
+        }
+
+        private void BindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             frmInsertPerson frm = new frmInsertPerson();
             frm.Show();
+        }
+ 
+
+        private void BindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+
+            DataGridViewRow row = this.dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex];
+            lblOsobaId.Text = row.Cells[0].Value.ToString();
+        }
+
+        private void BindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = this.dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex];
+            lblOsobaId.Text = row.Cells[0].Value.ToString();
+        }
+
+        private void bindingNavigatorUpdateItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Button1_Click(sender,e);
         }
     }
 }

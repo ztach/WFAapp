@@ -35,6 +35,7 @@ namespace WFAapp1.Classes
 
         public void SqlCommandNonQuery(string sql)
         {
+            OpenConnection();
             sqlCommandmd = new SQLiteCommand(sql)
             {
                 Connection = sql_con
@@ -52,6 +53,7 @@ namespace WFAapp1.Classes
 
         public string SqlExecuteOneValue(string sql)
         {
+            OpenConnection();
             sqlCommandmd = new SQLiteCommand(sql)
             {
                 Connection = sql_con
@@ -78,10 +80,8 @@ namespace WFAapp1.Classes
             return dataum;
         }
 
-        public string sqlInsert(string v1, string v2, string v3, string v4)
+        public string SqlInsert(string v1, string v2, string v3, string v4)
         {
-            //Person osoba = new Person(1, v1,v2,v3,v4);
-
             return "INSERT INTO Osoba(ImieNazwisko, KodMiasto," +
                "ulicaNr,PESEL ) VALUES ('"+ v1 + "','" + v2 + "','" + v3 + "','" + v4 + "')";
         }

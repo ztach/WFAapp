@@ -1,4 +1,7 @@
 ﻿
+using System.IO;
+using System.Windows.Forms;
+
 namespace WFAapp1.Classes
 {
     public class InitConnection
@@ -61,6 +64,26 @@ namespace WFAapp1.Classes
             return conPath;
         }
 
+        public static bool spraedzPlik()
+        {
+            bool jest = true;
 
+            if (!File.Exists(InitConnection.conPath + InitConnection.conFile))
+            {
+                MessageBox.Show(
+                    " podana ścieżka: " + InitConnection.conPath + " jest niepawidłowa!!!\n" +
+                    "                 lub\n" +
+                    " podany plik: " + InitConnection.conFile + " jest nieprawidlowy !!!!" +
+                    "\n\n" +
+                    "puszukaj pliku .ini i zmień dostęp!!!" +
+                    "\n\n" +
+                    "           szczegóły opisałem w pomocy (Help)"
+                    );
+                jest = false;
+            }
+
+            return jest;
+
+        }
     }
 }

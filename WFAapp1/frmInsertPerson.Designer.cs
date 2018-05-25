@@ -187,7 +187,7 @@
             this.btnAnuluj.TabIndex = 1;
             this.btnAnuluj.Text = "ANULUJ";
             this.btnAnuluj.UseVisualStyleBackColor = false;
-            this.btnAnuluj.Click += new System.EventHandler(this.btnAnuluj_Click);
+            this.btnAnuluj.Click += new System.EventHandler(this.BtnAnuluj_Click);
             // 
             // btnZapiszPerson
             // 
@@ -201,7 +201,7 @@
             this.btnZapiszPerson.TabIndex = 0;
             this.btnZapiszPerson.Text = "ZAPISZ";
             this.btnZapiszPerson.UseVisualStyleBackColor = false;
-            this.btnZapiszPerson.Click += new System.EventHandler(this.btnZapiszPerson_Click);
+            this.btnZapiszPerson.Click += new System.EventHandler(this.BtnZapiszPerson_Click);
             // 
             // frmInsertPerson
             // 
@@ -214,7 +214,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmInsertPerson";
             this.Text = "frmInsertPerson";
-            this.Load += new System.EventHandler(this.frmInsertPerson_Load);
+            this.Load += new System.EventHandler(this.FrmInsertPerson_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
