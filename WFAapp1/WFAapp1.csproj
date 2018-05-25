@@ -70,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ConnectCls.cs" />
+    <Compile Include="Classes\IniFile.cs" />
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

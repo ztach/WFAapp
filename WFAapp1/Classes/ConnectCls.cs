@@ -11,7 +11,13 @@ namespace WFAapp1.Classes
 {
     public class ConnectCls
     {
-        private string StringConn = @"Data Source=e:\praca\WFAapp\WFAapp1\Baza\Ksiazki.s3db;";
+
+        private static string StringConn;
+        public ConnectCls(string conPath, string conFile)
+        {
+            StringConn = @"Data Source=" + conPath + conFile + ";";
+        }
+
         SQLiteConnection sql_con;
         SQLiteDataAdapter adapter;
         SQLiteCommand sqlCommandmd;
@@ -44,10 +50,29 @@ namespace WFAapp1.Classes
             }
         }
 
-
-        public object ShowDataInGridView(string Query_)
+        public string SqlExecuteOneValue(string sql)
         {
-            adapter = new SQLiteDataAdapter(Query_, StringConn);
+            sqlCommandmd = new SQLiteCommand(sql)
+            {
+                Connection = sql_con
+            };
+
+            try
+            {
+                SQLiteDataReader rd;
+                rd = sqlCommandmd.ExecuteReader();
+                return rd.ToString();
+
+            }
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        public object ShowDataInGridView(string sql)
+        {
+            adapter = new SQLiteDataAdapter(sql, StringConn);
             DataSet ds = new DataSet();
             adapter.Fill(ds);
             object dataum = ds.Tables[0];

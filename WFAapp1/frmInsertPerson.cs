@@ -18,16 +18,25 @@ namespace WFAapp1
             InitializeComponent();
         }
 
-        Person p;
+        //Person p;
 
         private void btnZapiszPerson_Click(object sender, EventArgs e)
         {
-          ConnectCls myConnd = new ConnectCls();
+            Form1 f = new Form1();
+
+          ConnectCls myConnd = new ConnectCls(f.conPath, f.conFile);
           myConnd.OpenConnection();
           string s = myConnd.sqlInsert(txtImieNazwisko.Text,txtKodMiasto.Text, txtUlicaNr.Text, txtPesel.Text);
           myConnd.SqlCommandNonQuery(s);
-          
-          this.Close();
+
+            this.Close();
+            this.Close();
+            this.Close();
+        }
+
+        private void btnAnuluj_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
