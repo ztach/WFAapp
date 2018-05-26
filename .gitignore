@@ -203,6 +203,10 @@ UpgradeLog*.htm
 *.mdf
 *.ldf
 
+# SQLite files
+*.sqlite
+*.s3db
+
 # Business Intelligence projects
 *.rdl.data
 *.bim.layout
