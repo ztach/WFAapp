@@ -89,10 +89,11 @@
   <ItemGroup>
     <Compile Include="Classes\ConnectCls.cs" />
     <Compile Include="Classes\IniFile.cs" />
-    <Compile Include="Classes\InitConnection.cs" />
+    <Compile Include="Classes\IniDataBaseFile.cs" />
     <Compile Include="Classes\OpenDataBase.cs" />
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\PersonValidate.cs" />
+    <Compile Include="Classes\SQLiteCommands.cs" />
     <Compile Include="KtoPozyczyl\frmKtoPozyczyl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,10 +118,10 @@
     <Compile Include="Help\frmOProgramie.Designer.cs">
       <DependentUpon>frmOProgramie.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="Menu\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="Menu\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -137,7 +138,7 @@
     <EmbeddedResource Include="Help\frmOProgramie.resx">
       <DependentUpon>frmOProgramie.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="Menu\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

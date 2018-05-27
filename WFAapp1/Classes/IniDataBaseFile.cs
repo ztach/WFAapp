@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace WFAapp1.Classes
 {
-    public class InitConnection
+    public class IniDataBaseFile
     {
         static string _conPath;
         static string _conFile;
@@ -67,12 +67,12 @@ namespace WFAapp1.Classes
         {
             bool jest = true;
 
-            if (!File.Exists(InitConnection.conPath + InitConnection.conFile))
+            if (!File.Exists(IniDataBaseFile.conPath + IniDataBaseFile.conFile))
             {
                 MessageBox.Show(
-                    " podana ścieżka: " + InitConnection.conPath + " jest niepawidłowa!!!\n" +
+                    " podana ścieżka: " + IniDataBaseFile.conPath + " jest niepawidłowa!!!\n" +
                     "                 lub\n" +
-                    " podany plik: " + InitConnection.conFile + " jest nieprawidlowy !!!!" +
+                    " podany plik: " + IniDataBaseFile.conFile + " jest nieprawidlowy !!!!" +
                     "\n\n" +
                     "puszukaj pliku .ini i zmień dostęp!!!" +
                     "\n\n" +

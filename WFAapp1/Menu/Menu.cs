@@ -144,9 +144,9 @@ namespace WFAapp1
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            InitConnection.getIniFile();
-            InitConnection.getIniPath();
-            if (!InitConnection.spraedzPlik())
+            IniDataBaseFile.getIniFile();
+            IniDataBaseFile.getIniPath();
+            if (!IniDataBaseFile.spraedzPlik())
             {
                 Application.Exit();
             }

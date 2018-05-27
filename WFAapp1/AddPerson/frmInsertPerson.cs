@@ -24,7 +24,7 @@ namespace WFAapp1
 
         private void BtnZapiszPerson_Click(object sender, EventArgs e)
         {
-            ConnectCls myConnd = new ConnectCls(InitConnection.conPath, InitConnection.conFile);
+            SQLiteCommands myConnd = new SQLiteCommands(IniDataBaseFile.conPath, IniDataBaseFile.conFile);
             //myConnd.SqlInsertOsoba(txtImieNazwisko.Text,txtKodMiasto.Text, txtUlicaNr.Text, txtPesel.Text);
             string s = "select * from osoba where osobaid=1";
             var pp = myConnd.SqlReturnOneRecord(s);

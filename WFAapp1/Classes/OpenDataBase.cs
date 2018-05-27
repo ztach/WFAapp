@@ -25,7 +25,7 @@ namespace WFAapp1.Classes
 
         public void BindingDataGrid(BindingSource bs,DataGridView dg,BindingNavigator bn)
         {
-            ConnectCls myConn = new ConnectCls(InitConnection.conPath, InitConnection.conFile);
+            SQLiteCommands myConn = new SQLiteCommands(IniDataBaseFile.conPath, IniDataBaseFile.conFile);
             myConn.OpenConnection();
             bs.DataSource = myConn.ShowDataInGridView(query);
             dg.DataSource = bs;

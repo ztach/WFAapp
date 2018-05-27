@@ -47,7 +47,7 @@ namespace WFAapp1
             string mquery = "select distinct imieNazwisko || ' ' || kodMiasto || ' ' || UlicaNr as adres" +
                 " from osoba where osobaId=" + lblOsobaId.Text;
 
-            ConnectCls myConnn = new ConnectCls(InitConnection.conPath, InitConnection.conFile);
+            SQLiteCommands myConnn = new SQLiteCommands(IniDataBaseFile.conPath, IniDataBaseFile.conFile);
             
             txtWynik.Text = myConnn.SqlExecuteOneValue(mquery);
 
