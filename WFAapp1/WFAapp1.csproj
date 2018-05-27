@@ -73,6 +73,9 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.108.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -89,16 +92,17 @@
     <Compile Include="Classes\InitConnection.cs" />
     <Compile Include="Classes\OpenDataBase.cs" />
     <Compile Include="Classes\Person.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Classes\PersonValidate.cs" />
+    <Compile Include="KtoPozyczyl\frmKtoPozyczyl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="KtoPozyczyl\frmKtoPozyczyl.Designer.cs">
+      <DependentUpon>frmKtoPozyczyl.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInsertPerson.cs">
+    <Compile Include="AddPerson\frmInsertPerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInsertPerson.Designer.cs">
+    <Compile Include="AddPerson\frmInsertPerson.Designer.cs">
       <DependentUpon>frmInsertPerson.cs</DependentUpon>
     </Compile>
     <Compile Include="Help\frmGdzieJestBaza1.cs">
@@ -121,10 +125,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="KtoPozyczyl\frmKtoPozyczyl.resx">
+      <DependentUpon>frmKtoPozyczyl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInsertPerson.resx">
+    <EmbeddedResource Include="AddPerson\frmInsertPerson.resx">
       <DependentUpon>frmInsertPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Help\frmGdzieJestBaza1.resx">

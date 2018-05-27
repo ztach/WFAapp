@@ -24,15 +24,21 @@ namespace WFAapp1
 
         private void BtnZapiszPerson_Click(object sender, EventArgs e)
         {
+            ConnectCls myConnd = new ConnectCls(InitConnection.conPath, InitConnection.conFile);
+            //myConnd.SqlInsertOsoba(txtImieNazwisko.Text,txtKodMiasto.Text, txtUlicaNr.Text, txtPesel.Text);
+            string s = "select * from osoba where osobaid=1";
+            var pp = myConnd.SqlReturnOneRecord(s);
             
+            Person person = new Person(pp.Item1, pp.Item2, pp.Item3, pp.Item4);
 
-          ConnectCls myConnd = new ConnectCls(InitConnection.conPath, InitConnection.conFile);
-          
-          string s = myConnd.SqlInsert(txtImieNazwisko.Text,txtKodMiasto.Text, txtUlicaNr.Text, txtPesel.Text);
-          myConnd.SqlCommandNonQuery(s);
+            //MessageBox.Show(pp.Item1+pp.Item2+pp.Item3+pp.Item4);
+
+            MessageBox.Show(person.ImieNazwisko + " " + person.KodMiasto + " "+ person.Telefon);
+
+
             this.Close();
         }
-
+        
         private void BtnAnuluj_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -36,6 +36,7 @@ namespace WFAapp1
             
             odb.BindingDataGrid(bsOsoba, dataGridView1, bindingNavigator1);
             dataGridView1.Columns["OsobaId"].Visible = false;
+            dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -60,6 +61,7 @@ namespace WFAapp1
                 query = mquery
             };
             odb.BindingDataGrid(bsWypozyczenia, dataGridView2, bindingNavigator2);
+            dataGridView2.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -86,8 +88,15 @@ namespace WFAapp1
 
         private void BindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
+            //bindingNavigatorDeleteItem.Visible = false;
+            if (!this.IsDisposed)
+            {
+                this.Close();
+            }
+
             frmInsertPerson frm = new frmInsertPerson();
             frm.Show();
+                
         }
  
 
