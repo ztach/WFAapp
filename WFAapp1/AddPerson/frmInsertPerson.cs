@@ -24,18 +24,19 @@ namespace WFAapp1
 
         private void BtnZapiszPerson_Click(object sender, EventArgs e)
         {
-            SQLiteCommands myConnd = new SQLiteCommands(IniDataBaseFile.conPath, IniDataBaseFile.conFile);
-            //myConnd.SqlInsertOsoba(txtImieNazwisko.Text,txtKodMiasto.Text, txtUlicaNr.Text, txtPesel.Text);
-            string s = "select * from osoba where osobaid=1";
+            PersonCommands myConnd = new PersonCommands(IniDataBaseFile.conPath, IniDataBaseFile.conFile);
+           // myConnd.SqlInsertOsoba(txtImieNazwisko.Text,txtKodMiasto.Text, txtUlicaNr.Text, txtPesel.Text);
+           /* string s = "select * from osoba where osobaid=1";
             var pp = myConnd.SqlReturnOneRecord(s);
-            
-            Person person = new Person(pp.Item1, pp.Item2, pp.Item3, pp.Item4);
 
-            //MessageBox.Show(pp.Item1+pp.Item2+pp.Item3+pp.Item4);
+            PersonValidate person = new PersonValidate(pp.ImieNazwisko,pp.KodMiasto,pp.ulicaNr,pp.Telefon,pp.Email);
 
-            MessageBox.Show(person.ImieNazwisko + " " + person.KodMiasto + " "+ person.Telefon);
+            lblTelefonVal.Text = person.TelefonValidate();
+            lblEmailVal.Text = person.EmailValidate();
+           
 
-
+            MessageBox.Show(person.ImieNazwisko + " " + person.KodMiasto + " TEL: "+ person.Telefon +" EMAIL: "+  person.Email);
+            */
             this.Close();
         }
         
@@ -44,9 +45,23 @@ namespace WFAapp1
             this.Close();
         }
 
+        PersonValidate p;
+
         private void FrmInsertPerson_Load(object sender, EventArgs e)
         {
+            
+        }
 
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            p = new PersonValidate(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text, txtEmail.Text);
+            lblEmailVal.Text = p.EmailValidate();
+        }
+
+        private void txtKodMiasto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            p = new PersonValidate(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text, txtEmail.Text);
+            lblKodMiastoVal.Text = p.KodMiastoValidate();
         }
     }
 }

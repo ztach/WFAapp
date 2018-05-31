@@ -31,8 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtPesel = new System.Windows.Forms.TextBox();
-            this.lblPesel = new System.Windows.Forms.Label();
+            this.lblKodMiastoVal = new System.Windows.Forms.Label();
+            this.lblTelefonVal = new System.Windows.Forms.Label();
+            this.lblUlicaNrVal = new System.Windows.Forms.Label();
+            this.lblINazwiskoVal = new System.Windows.Forms.Label();
+            this.txtTelefon = new System.Windows.Forms.TextBox();
+            this.lblTelefon = new System.Windows.Forms.Label();
             this.txtUlicaNr = new System.Windows.Forms.TextBox();
             this.lblUlicaNr = new System.Windows.Forms.Label();
             this.txtKodMiasto = new System.Windows.Forms.TextBox();
@@ -42,10 +46,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAnuluj = new System.Windows.Forms.Button();
             this.btnZapiszPerson = new System.Windows.Forms.Button();
-            this.lblINval = new System.Windows.Forms.Label();
-            this.lblMiastoVal = new System.Windows.Forms.Label();
-            this.lblUlicaVal = new System.Windows.Forms.Label();
-            this.lblTelVal = new System.Windows.Forms.Label();
+            this.lblEmailVal = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -75,12 +78,15 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Controls.Add(this.lblTelVal);
-            this.panel2.Controls.Add(this.lblUlicaVal);
-            this.panel2.Controls.Add(this.lblMiastoVal);
-            this.panel2.Controls.Add(this.lblINval);
-            this.panel2.Controls.Add(this.txtPesel);
-            this.panel2.Controls.Add(this.lblPesel);
+            this.panel2.Controls.Add(this.lblEmailVal);
+            this.panel2.Controls.Add(this.txtEmail);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.lblKodMiastoVal);
+            this.panel2.Controls.Add(this.lblTelefonVal);
+            this.panel2.Controls.Add(this.lblUlicaNrVal);
+            this.panel2.Controls.Add(this.lblINazwiskoVal);
+            this.panel2.Controls.Add(this.txtTelefon);
+            this.panel2.Controls.Add(this.lblTelefon);
             this.panel2.Controls.Add(this.txtUlicaNr);
             this.panel2.Controls.Add(this.lblUlicaNr);
             this.panel2.Controls.Add(this.txtKodMiasto);
@@ -92,27 +98,63 @@
             this.panel2.Location = new System.Drawing.Point(0, 62);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(764, 464);
+            this.panel2.Size = new System.Drawing.Size(764, 556);
             this.panel2.TabIndex = 1;
             // 
-            // txtPesel
+            // lblKodMiastoVal
             // 
-            this.txtPesel.Location = new System.Drawing.Point(221, 290);
-            this.txtPesel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPesel.Multiline = true;
-            this.txtPesel.Name = "txtPesel";
-            this.txtPesel.Size = new System.Drawing.Size(516, 42);
-            this.txtPesel.TabIndex = 7;
+            this.lblKodMiastoVal.AutoSize = true;
+            this.lblKodMiastoVal.Location = new System.Drawing.Point(233, 165);
+            this.lblKodMiastoVal.Name = "lblKodMiastoVal";
+            this.lblKodMiastoVal.Size = new System.Drawing.Size(34, 22);
+            this.lblKodMiastoVal.TabIndex = 11;
+            this.lblKodMiastoVal.Text = "    ";
             // 
-            // lblPesel
+            // lblTelefonVal
             // 
-            this.lblPesel.AutoSize = true;
-            this.lblPesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPesel.Location = new System.Drawing.Point(53, 289);
-            this.lblPesel.Name = "lblPesel";
-            this.lblPesel.Size = new System.Drawing.Size(101, 22);
-            this.lblPesel.TabIndex = 6;
-            this.lblPesel.Text = "TELEFON";
+            this.lblTelefonVal.AutoSize = true;
+            this.lblTelefonVal.Location = new System.Drawing.Point(229, 346);
+            this.lblTelefonVal.Name = "lblTelefonVal";
+            this.lblTelefonVal.Size = new System.Drawing.Size(34, 22);
+            this.lblTelefonVal.TabIndex = 10;
+            this.lblTelefonVal.Text = "    ";
+            // 
+            // lblUlicaNrVal
+            // 
+            this.lblUlicaNrVal.AutoSize = true;
+            this.lblUlicaNrVal.Location = new System.Drawing.Point(229, 255);
+            this.lblUlicaNrVal.Name = "lblUlicaNrVal";
+            this.lblUlicaNrVal.Size = new System.Drawing.Size(34, 22);
+            this.lblUlicaNrVal.TabIndex = 9;
+            this.lblUlicaNrVal.Text = "    ";
+            // 
+            // lblINazwiskoVal
+            // 
+            this.lblINazwiskoVal.AutoSize = true;
+            this.lblINazwiskoVal.Location = new System.Drawing.Point(228, 81);
+            this.lblINazwiskoVal.Name = "lblINazwiskoVal";
+            this.lblINazwiskoVal.Size = new System.Drawing.Size(34, 22);
+            this.lblINazwiskoVal.TabIndex = 8;
+            this.lblINazwiskoVal.Text = "    ";
+            // 
+            // txtTelefon
+            // 
+            this.txtTelefon.Location = new System.Drawing.Point(221, 290);
+            this.txtTelefon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTelefon.Multiline = true;
+            this.txtTelefon.Name = "txtTelefon";
+            this.txtTelefon.Size = new System.Drawing.Size(516, 42);
+            this.txtTelefon.TabIndex = 7;
+            // 
+            // lblTelefon
+            // 
+            this.lblTelefon.AutoSize = true;
+            this.lblTelefon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblTelefon.Location = new System.Drawing.Point(53, 289);
+            this.lblTelefon.Name = "lblTelefon";
+            this.lblTelefon.Size = new System.Drawing.Size(101, 22);
+            this.lblTelefon.TabIndex = 6;
+            this.lblTelefon.Text = "TELEFON";
             // 
             // txtUlicaNr
             // 
@@ -141,6 +183,7 @@
             this.txtKodMiasto.Name = "txtKodMiasto";
             this.txtKodMiasto.Size = new System.Drawing.Size(516, 42);
             this.txtKodMiasto.TabIndex = 3;
+            this.txtKodMiasto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKodMiasto_KeyPress);
             // 
             // lblKodMiasto
             // 
@@ -177,7 +220,7 @@
             this.panel3.Controls.Add(this.btnAnuluj);
             this.panel3.Controls.Add(this.btnZapiszPerson);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 448);
+            this.panel3.Location = new System.Drawing.Point(0, 540);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(764, 78);
@@ -211,47 +254,40 @@
             this.btnZapiszPerson.UseVisualStyleBackColor = false;
             this.btnZapiszPerson.Click += new System.EventHandler(this.BtnZapiszPerson_Click);
             // 
-            // lblINval
+            // lblEmailVal
             // 
-            this.lblINval.AutoSize = true;
-            this.lblINval.Location = new System.Drawing.Point(227, 83);
-            this.lblINval.Name = "lblINval";
-            this.lblINval.Size = new System.Drawing.Size(34, 22);
-            this.lblINval.TabIndex = 8;
-            this.lblINval.Text = "    ";
+            this.lblEmailVal.AutoSize = true;
+            this.lblEmailVal.Location = new System.Drawing.Point(227, 439);
+            this.lblEmailVal.Name = "lblEmailVal";
+            this.lblEmailVal.Size = new System.Drawing.Size(34, 22);
+            this.lblEmailVal.TabIndex = 14;
+            this.lblEmailVal.Text = "    ";
             // 
-            // lblMiastoVal
+            // txtEmail
             // 
-            this.lblMiastoVal.AutoSize = true;
-            this.lblMiastoVal.Location = new System.Drawing.Point(227, 164);
-            this.lblMiastoVal.Name = "lblMiastoVal";
-            this.lblMiastoVal.Size = new System.Drawing.Size(34, 22);
-            this.lblMiastoVal.TabIndex = 9;
-            this.lblMiastoVal.Text = "    ";
+            this.txtEmail.Location = new System.Drawing.Point(219, 384);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmail.Multiline = true;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(516, 42);
+            this.txtEmail.TabIndex = 13;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
-            // lblUlicaVal
+            // label3
             // 
-            this.lblUlicaVal.AutoSize = true;
-            this.lblUlicaVal.Location = new System.Drawing.Point(227, 254);
-            this.lblUlicaVal.Name = "lblUlicaVal";
-            this.lblUlicaVal.Size = new System.Drawing.Size(34, 22);
-            this.lblUlicaVal.TabIndex = 10;
-            this.lblUlicaVal.Text = "    ";
-            // 
-            // lblTelVal
-            // 
-            this.lblTelVal.AutoSize = true;
-            this.lblTelVal.Location = new System.Drawing.Point(227, 347);
-            this.lblTelVal.Name = "lblTelVal";
-            this.lblTelVal.Size = new System.Drawing.Size(34, 22);
-            this.lblTelVal.TabIndex = 11;
-            this.lblTelVal.Text = "    ";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(51, 383);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 22);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "EMAIL";
             // 
             // frmInsertPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 526);
+            this.ClientSize = new System.Drawing.Size(764, 618);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -273,8 +309,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtPesel;
-        private System.Windows.Forms.Label lblPesel;
+        private System.Windows.Forms.TextBox txtTelefon;
+        private System.Windows.Forms.Label lblTelefon;
         private System.Windows.Forms.TextBox txtUlicaNr;
         private System.Windows.Forms.Label lblUlicaNr;
         private System.Windows.Forms.TextBox txtKodMiasto;
@@ -284,9 +320,12 @@
         private System.Windows.Forms.Button btnZapiszPerson;
         private System.Windows.Forms.Button btnAnuluj;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblTelVal;
-        private System.Windows.Forms.Label lblUlicaVal;
-        private System.Windows.Forms.Label lblMiastoVal;
-        private System.Windows.Forms.Label lblINval;
+        private System.Windows.Forms.Label lblKodMiastoVal;
+        private System.Windows.Forms.Label lblTelefonVal;
+        private System.Windows.Forms.Label lblUlicaNrVal;
+        private System.Windows.Forms.Label lblINazwiskoVal;
+        private System.Windows.Forms.Label lblEmailVal;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label3;
     }
 }

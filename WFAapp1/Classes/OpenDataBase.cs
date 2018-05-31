@@ -22,7 +22,7 @@ namespace WFAapp1.Classes
                 _query = value;
             }
         }
-
+        
         public void BindingDataGrid(BindingSource bs,DataGridView dg,BindingNavigator bn)
         {
             SQLiteCommands myConn = new SQLiteCommands(IniDataBaseFile.conPath, IniDataBaseFile.conFile);

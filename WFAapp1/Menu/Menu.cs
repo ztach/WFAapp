@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFAapp1.Classes;
 using WFAapp1.Help;
+using WFAapp1.ListaKsiazek;
 
 namespace WFAapp1
 {
@@ -70,15 +71,7 @@ namespace WFAapp1
         {
         }
 
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
-        }
 
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
-        }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -111,24 +104,28 @@ namespace WFAapp1
         private void ksiegarniaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form1 f = new Form1();
+            f.MdiParent = this;
             f.Show();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmOProgramie f = new frmOProgramie();
+            f.MdiParent = this;
             f.Show();
         }
 
         private void gdzieJestBazaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmGdzieJestBaza1 f = new frmGdzieJestBaza1();
-            f.Show();
+            /*frmGdzieJestBaza1 f = new frmGdzieJestBaza1();
+            f.Show();*/
+            panelHelp.Visible = !panelHelp.Visible;
         }
 
         private void wprowadzOsobeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmInsertPerson f = new frmInsertPerson();
+            f.MdiParent = this;
             f.Show();
         }
 
@@ -150,8 +147,36 @@ namespace WFAapp1
             {
                 Application.Exit();
             }
-                
+            panelHelp.Visible = false;
         }
-        
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExitX_Click(object sender, EventArgs e)
+        {
+            panelHelp.Visible = false;
+        }
+
+        private void listaKsiazekToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListaKsiazek lk = new frmListaKsiazek();
+            lk.MdiParent = this;
+            
+            lk.Show();
+
+        }
+
+        private void listaCzytelnikówToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listaWypożyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

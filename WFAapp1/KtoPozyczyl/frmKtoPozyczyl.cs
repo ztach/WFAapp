@@ -67,6 +67,7 @@ namespace WFAapp1
         private void Form1_Load(object sender, EventArgs e)
         {
             lblOsobaId.Text = "1";
+           // bindingNavigator1.Items[0].Visible = true;
         }
 
         

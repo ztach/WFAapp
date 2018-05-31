@@ -13,6 +13,7 @@ namespace WFAapp1.Classes
         private string _KodMiasto;
         private string _ulicaNr;
         private string _Telefon;
+        private string _Email;
 
         public int OsobaId
         {
@@ -73,32 +74,36 @@ namespace WFAapp1.Classes
             }
         }
 
-        public (int, string, string, string, string) ShowPerson()
+        public string Email
         {
-            return (this.OsobaId, this.ImieNazwisko, this.KodMiasto, this.ulicaNr, this.Telefon);
+            get
+            {
+                return _Email;
+            }
+            set
+            {
+                _Email = value;
+            }
         }
 
-        public (string, string, string, string) ShowPersonVal()
+
+        public Person(int osobaId, string imieNaziwsko, string kodMiasto, string ulicaNr, string telefon, string email)
         {
-            return (this.ImieNazwisko, this.KodMiasto, this.ulicaNr, this.Telefon);
+            this._OsobaId       = osobaId;
+            this._ImieNazwisko  = imieNaziwsko;
+            this._KodMiasto     = kodMiasto;
+            this._ulicaNr       = ulicaNr;
+            this._Telefon       = telefon;
+            this._Email         = email;
         }
 
-
-        public Person(int v1, string v2, string v3, string v4, string v5)
+        public Person(string imieNaziwsko, string kodMiasto, string ulicaNr, string telefon, string email)
         {
-            this._OsobaId = v1;
-            this._ImieNazwisko = v2;
-            this._KodMiasto = v3;
-            this._ulicaNr = v4;
-            this._Telefon = v5;
-        }
-
-        public Person(string v2, string v3, string v4, string v5)
-        {
-            this._ImieNazwisko = v2;
-            this._KodMiasto = v3;
-            this._ulicaNr = v4;
-            this._Telefon = v5;
+            this._ImieNazwisko = imieNaziwsko;
+            this._KodMiasto = kodMiasto;
+            this._ulicaNr = ulicaNr;
+            this._Telefon = telefon;
+            this._Email = email;
         }
 
         public Person()

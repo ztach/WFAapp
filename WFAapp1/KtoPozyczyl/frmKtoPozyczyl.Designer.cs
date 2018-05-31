@@ -106,8 +106,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.panel3);
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
             this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Size = new System.Drawing.Size(1913, 532);
-            this.splitContainer1.SplitterDistance = 957;
+            this.splitContainer1.Size = new System.Drawing.Size(1531, 532);
+            this.splitContainer1.SplitterDistance = 765;
             this.splitContainer1.TabIndex = 0;
             // 
             // panel6
@@ -117,7 +117,7 @@
             this.panel6.Location = new System.Drawing.Point(0, 51);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(957, 432);
+            this.panel6.Size = new System.Drawing.Size(765, 432);
             this.panel6.TabIndex = 4;
             // 
             // dataGridView2
@@ -128,7 +128,7 @@
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(957, 432);
+            this.dataGridView2.Size = new System.Drawing.Size(765, 432);
             this.dataGridView2.TabIndex = 1;
             // 
             // panel5
@@ -138,7 +138,7 @@
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(957, 51);
+            this.panel5.Size = new System.Drawing.Size(765, 51);
             this.panel5.TabIndex = 3;
             // 
             // bindingNavigator2
@@ -167,7 +167,7 @@
             this.bindingNavigator2.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigator2.Name = "bindingNavigator2";
             this.bindingNavigator2.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigator2.Size = new System.Drawing.Size(957, 51);
+            this.bindingNavigator2.Size = new System.Drawing.Size(765, 51);
             this.bindingNavigator2.TabIndex = 0;
             this.bindingNavigator2.Text = "bindingNavigator2";
             // 
@@ -263,7 +263,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 483);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(957, 49);
+            this.panel4.Size = new System.Drawing.Size(765, 49);
             this.panel4.TabIndex = 2;
             // 
             // txtWynik
@@ -283,7 +283,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 51);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(952, 432);
+            this.panel3.Size = new System.Drawing.Size(762, 432);
             this.panel3.TabIndex = 2;
             // 
             // dataGridView1
@@ -294,7 +294,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(952, 432);
+            this.dataGridView1.Size = new System.Drawing.Size(762, 432);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
@@ -309,7 +309,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 483);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(952, 49);
+            this.panel2.Size = new System.Drawing.Size(762, 49);
             this.panel2.TabIndex = 1;
             // 
             // lblOsobaId
@@ -358,12 +358,12 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(952, 51);
+            this.panel1.Size = new System.Drawing.Size(762, 51);
             this.panel1.TabIndex = 0;
             // 
             // bindingNavigator1
             // 
-            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator1.AddNewItem = null;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -389,7 +389,7 @@
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
             this.bindingNavigator1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.bindingNavigator1.Size = new System.Drawing.Size(952, 51);
+            this.bindingNavigator1.Size = new System.Drawing.Size(762, 51);
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -495,7 +495,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1913, 532);
+            this.ClientSize = new System.Drawing.Size(1531, 532);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
