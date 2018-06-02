@@ -8,21 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFAapp1.Classes;
+using WFAapp1.Dostep;
 using WFAapp1.Help;
 using WFAapp1.ListaKsiazek;
+using WFAapp1.LoginAdmin;
 
 namespace WFAapp1
 {
     public partial class Menu : Form
     {
         private int childFormNumber = 0;
-//        public static string conPath;
-//        public static string conFile;
 
         public Menu()
         {
             InitializeComponent();
         }
+
+        #region Menu systemowe
 
         private void ShowNewForm(object sender, EventArgs e)
         {
@@ -101,10 +103,13 @@ namespace WFAapp1
             }
         }
 
+        #endregion
+
         private void ksiegarniaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 f = new Form1();
+            frmKtoPozyczyl f = new frmKtoPozyczyl();
             f.MdiParent = this;
+            f.WindowState = FormWindowState.Maximized;
             f.Show();
         }
 
@@ -139,15 +144,27 @@ namespace WFAapp1
 
         }
 
-        private void Menu_Load(object sender, EventArgs e)
+        private void CheckIniDataBase()
         {
             IniDataBaseFile.getIniFile();
             IniDataBaseFile.getIniPath();
-            if (!IniDataBaseFile.spraedzPlik())
+            if (!IniDataBaseFile.spraedzPlik("1"))
             {
-                Application.Exit();
+                // Application.Exit();
+                menuStrip.Items[0].Enabled = false;
+                menuStrip.Items[1].Enabled = false;
+
             }
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+            CheckIniDataBase();
+
             panelHelp.Visible = false;
+
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -164,17 +181,57 @@ namespace WFAapp1
         {
             frmListaKsiazek lk = new frmListaKsiazek();
             lk.MdiParent = this;
-            
+
             lk.Show();
 
         }
 
-        private void listaCzytelnikówToolStripMenuItem_Click(object sender, EventArgs e)
+ 
+        private void WczytajInnaBazeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("wczytaj nowe");
+        }
+
+        private void adminToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
+        {
+            if (!LoginValidate.statusWejscia)
+            {
+                frmLoginAdmin la = new frmLoginAdmin();
+                //la.MdiParent = this;
+                la.Show();
+                string wyszlo = la.ToString();
+            }
+
+        }
+
+        private void dostepToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show("dostęp");
+            frmDostep fd = new frmDostep();
+            fd.MdiParent = this;
+            fd.Show();
+
+            if (!IniDataBaseFile.spraedzPlik("1"))
+            {
+                // Application.Exit();
+                menuStrip.Items[0].Enabled = true;
+                menuStrip.Items[1].Enabled = true;
+
+            }
+
+        }
+
+        private void bazaToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
+        {
+            CheckIniDataBase();
+        }
+
+        private void listaCzytelnikowToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void listaWypożyToolStripMenuItem_Click(object sender, EventArgs e)
+        private void listaWypozyToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

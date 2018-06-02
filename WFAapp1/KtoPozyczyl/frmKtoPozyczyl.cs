@@ -14,13 +14,13 @@ using WFAapp1.Classes;
 
 namespace WFAapp1
 {
-    public partial class Form1 : Form
+    public partial class frmKtoPozyczyl : Form
     {
       
         BindingSource bsOsoba = new BindingSource();
         BindingSource bsWypozyczenia = new BindingSource();
 
-        public Form1()
+        public frmKtoPozyczyl()
         {
             InitializeComponent();
         }
