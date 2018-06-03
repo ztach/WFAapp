@@ -30,9 +30,7 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtSciezkaDoIni = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtSciezkaDostepu = new System.Windows.Forms.TextBox();
             this.txtNazwaPliku = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,9 +55,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(26)))), ((int)(((byte)(138)))));
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtSciezkaDoIni);
-            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.txtSciezkaDostepu);
             this.panel2.Controls.Add(this.txtNazwaPliku);
             this.panel2.Controls.Add(this.label2);
@@ -68,7 +64,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 49);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1063, 435);
+            this.panel2.Size = new System.Drawing.Size(1063, 337);
             this.panel2.TabIndex = 4;
             // 
             // label5
@@ -76,50 +72,30 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(54, 169);
+            this.label5.Location = new System.Drawing.Point(54, 192);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(203, 29);
             this.label5.TabIndex = 8;
             this.label5.Text = "DO PLIKU BAZY";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(54, 322);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 29);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "DO PLIKU INI";
-            // 
             // txtSciezkaDoIni
             // 
+            this.txtSciezkaDoIni.Enabled = false;
             this.txtSciezkaDoIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtSciezkaDoIni.ImeMode = System.Windows.Forms.ImeMode.HangulFull;
-            this.txtSciezkaDoIni.Location = new System.Drawing.Point(339, 277);
+            this.txtSciezkaDoIni.Location = new System.Drawing.Point(207, 248);
             this.txtSciezkaDoIni.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSciezkaDoIni.Multiline = true;
             this.txtSciezkaDoIni.Name = "txtSciezkaDoIni";
-            this.txtSciezkaDoIni.Size = new System.Drawing.Size(686, 116);
+            this.txtSciezkaDoIni.Size = new System.Drawing.Size(50, 31);
             this.txtSciezkaDoIni.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(54, 279);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(251, 29);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "ŚCIEŻKA DOSTĘPU";
+            this.txtSciezkaDoIni.Visible = false;
             // 
             // txtSciezkaDostepu
             // 
             this.txtSciezkaDostepu.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtSciezkaDostepu.ImeMode = System.Windows.Forms.ImeMode.HangulFull;
-            this.txtSciezkaDostepu.Location = new System.Drawing.Point(339, 121);
+            this.txtSciezkaDostepu.Location = new System.Drawing.Point(339, 144);
             this.txtSciezkaDostepu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSciezkaDostepu.Multiline = true;
             this.txtSciezkaDostepu.Name = "txtSciezkaDostepu";
@@ -130,7 +106,7 @@
             // 
             this.txtNazwaPliku.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtNazwaPliku.ImeMode = System.Windows.Forms.ImeMode.HangulFull;
-            this.txtNazwaPliku.Location = new System.Drawing.Point(339, 49);
+            this.txtNazwaPliku.Location = new System.Drawing.Point(339, 57);
             this.txtNazwaPliku.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNazwaPliku.Name = "txtNazwaPliku";
             this.txtNazwaPliku.Size = new System.Drawing.Size(686, 32);
@@ -141,7 +117,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(54, 123);
+            this.label2.Location = new System.Drawing.Point(54, 146);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(251, 29);
             this.label2.TabIndex = 1;
@@ -152,7 +128,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(54, 49);
+            this.label1.Location = new System.Drawing.Point(54, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 29);
             this.label1.TabIndex = 0;
@@ -258,11 +234,13 @@
             // tslblZnajdzPlikIni
             // 
             this.tslblZnajdzPlikIni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(26)))), ((int)(((byte)(138)))));
+            this.tslblZnajdzPlikIni.Enabled = false;
             this.tslblZnajdzPlikIni.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tslblZnajdzPlikIni.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tslblZnajdzPlikIni.Name = "tslblZnajdzPlikIni";
             this.tslblZnajdzPlikIni.Size = new System.Drawing.Size(150, 46);
             this.tslblZnajdzPlikIni.Text = "Znajdź plik INI";
+            this.tslblZnajdzPlikIni.Visible = false;
             this.tslblZnajdzPlikIni.Click += new System.EventHandler(this.tslblZnajdzPlikIni_Click);
             this.tslblZnajdzPlikIni.MouseLeave += new System.EventHandler(this.tslblZnajdzPlikIni_MouseLeave);
             this.tslblZnajdzPlikIni.MouseHover += new System.EventHandler(this.tslblZnajdzPlikIni_MouseHover);
@@ -279,7 +257,7 @@
             this.panel3.Controls.Add(this.btnZaloguj);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel3.Location = new System.Drawing.Point(0, 484);
+            this.panel3.Location = new System.Drawing.Point(0, 386);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1063, 104);
@@ -289,7 +267,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 588);
+            this.ClientSize = new System.Drawing.Size(1063, 490);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
@@ -320,9 +298,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSciezkaDoIni;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel tslblZnajdzPlikBazy;

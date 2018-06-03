@@ -22,7 +22,7 @@ namespace WFAapp1.Classes
         //validate string 
         private bool StringValidator(string input)
         {
-            string pattern = "[^a-zA-Z0-9@#$%!&]";
+            string pattern = "[^a-zA-Z0-9@#$%!&]+";
             if (Regex.IsMatch(input, pattern))
             {
                 return true;
@@ -41,7 +41,7 @@ namespace WFAapp1.Classes
         }
 
         //method to check if eligible to be logged in 
-        private bool UserValidate(string user)
+        public bool UserValidate(string user)
         {
 
             if (string.IsNullOrEmpty(user))
@@ -52,15 +52,13 @@ namespace WFAapp1.Classes
             //check user name is valid type 
             if (StringValidator(user) == true)
             {
-                passMessage = "Enter only text here";
-                //ClearTexts(user, pass);
+                userMessage = "Enter only text here";
                 return false;
             }
             //check user name is correct 
             if (Username != user)
                 {
                     userMessage = "User name is incorrect!";
-                    //ClearTexts(user, pass);
                     return false;
                 }
 
@@ -68,7 +66,7 @@ namespace WFAapp1.Classes
             return true;
         }
 
-        private bool PasswordValidate(string pass)
+        public bool PasswordValidate(string pass)
         {
             if (string.IsNullOrEmpty(pass))
             {
@@ -84,12 +82,11 @@ namespace WFAapp1.Classes
             //check password is correct 
             if (Password != pass)
             {
-                passMessage = "Password is incorrect";
+                passMessage = "Password is incorrect!";
                 return false;
             }
 
             passMessage = "Password is correct";
-
             return true;
         }
 
@@ -102,56 +99,7 @@ namespace WFAapp1.Classes
 
             return u && p;
             
-            /*
-            //check user name empty 
-            if (string.IsNullOrEmpty(user))
-            {
-                userMessage = "Enter the user name!";
-                return false;
-            }
-            //check user name is valid type 
-            else if (StringValidator(user) == true)
-            {
-                passMessage = "Enter only text here";
-                ClearTexts(user, pass);
-                return false;
-            }
-            //check user name is correct 
-            else
-            {
-                if (Username != user)
-                {
-                    userMessage = "User name is incorrect!";
-                    ClearTexts(user, pass);
-                    return false;
-                }
-                //check password is empty 
-                else
-                {
-                    if (string.IsNullOrEmpty(pass))
-                    {
-                        passMessage = "Enter the passowrd!";
-                        return false;
-                    }
-                    //check password is valid 
-                    else if (IntegerValidator(pass) == true)
-                    {
-                        passMessage = "Enter only integer here";
-                        return false;
-                    }
-                    //check password is correct 
-                    else if (Password != pass)
-                    {
-                        passMessage = "Password is incorrect";
-                        return false;
-                    }
-                    else
-                    {
-                        return true;
-                    }
-                }
-            }
-     */
+
     }
 }
 }

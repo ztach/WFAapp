@@ -206,7 +206,6 @@ namespace WFAapp1
 
         private void dostepToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("dostęp");
             frmDostep fd = new frmDostep();
             fd.MdiParent = this;
             fd.Show();
@@ -216,7 +215,6 @@ namespace WFAapp1
                 // Application.Exit();
                 menuStrip.Items[0].Enabled = true;
                 menuStrip.Items[1].Enabled = true;
-
             }
 
         }
