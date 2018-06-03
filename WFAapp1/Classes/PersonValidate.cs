@@ -76,21 +76,10 @@ namespace WFAapp1.Classes
             }
         }
 
-
-        public string TelefonValidate()
-        {
-            string wynik = "ok";
-            telefonIsOk = true;
-            if (Telefon.Length > 11)
-            {
-                wynik = "źle";
-                telefonIsOk = false;
-            }
-            return wynik;
-        }
-
         static Regex ValidEmailRegex = CreateValidEmailRegex();
         static Regex ValidKodMiastoRegex = CreateValidKodMiastoRegex();
+        static Regex ValidTelefonRegex = CreateValidTelefonRegex();
+
 
         private static Regex CreateValidEmailRegex()
         {
@@ -108,6 +97,16 @@ namespace WFAapp1.Classes
             return new Regex(validKodMiastoPattern, RegexOptions.IgnoreCase);
         }
 
+        private static Regex CreateValidTelefonRegex()
+        {
+
+            string validTelefonPattern = @"^(?(?=\(?\d{3}\))(\(?\d{3}\))|(\(?\d{2}\)))?-? *(?(?=\d{3})(\d{3})|(\d{2}))-? *-?(?(?=\d{4})(\d{4})|(\d{2}?-? *\d2))$";
+                //@"^\(?\d{3}\))?-? *\d{3}-? *-?\d{4}$";
+                //@"^[0-9- ]{9,15}$";
+
+            return new Regex(validTelefonPattern, RegexOptions.IgnoreCase);
+        }
+
 
         public string EmailValidate()
         {
@@ -119,6 +118,18 @@ namespace WFAapp1.Classes
             }
             return wynik;
          }
+
+        public string TelefonValidate()
+        {
+            string wynik = "nieprawidłowy numer";
+            telefonIsOk = ValidTelefonRegex.IsMatch(Telefon);
+            if (telefonIsOk)
+            {
+                wynik = "ok";
+            }
+            return wynik;
+        }
+
 
         public string ImieNazwiskoValidate()
         {

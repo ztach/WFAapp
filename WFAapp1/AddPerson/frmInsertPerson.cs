@@ -20,14 +20,14 @@ namespace WFAapp1
 
         //Person p;
 
-        Menu m = new Menu();
+        //Menu m = new Menu();
 
         private void BtnZapiszPerson_Click(object sender, EventArgs e)
         {
             PersonCommands myConnd = new PersonCommands(IniDataBaseFile.conPath, IniDataBaseFile.conFile);
            // myConnd.SqlInsertOsoba(txtImieNazwisko.Text,txtKodMiasto.Text, txtUlicaNr.Text, txtPesel.Text);
            /* string s = "select * from osoba where osobaid=1";
-            var pp = myConnd.SqlReturnOneRecord(s);
+            var pp = myConnd.SqlReturnOneRecord(s); 
 
             PersonValidate person = new PersonValidate(pp.ImieNazwisko,pp.KodMiasto,pp.ulicaNr,pp.Telefon,pp.Email);
 
@@ -49,7 +49,6 @@ namespace WFAapp1
 
         private void FrmInsertPerson_Load(object sender, EventArgs e)
         {
-            
         }
 
         private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
@@ -62,6 +61,12 @@ namespace WFAapp1
         {
             p = new PersonValidate(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text, txtEmail.Text);
             lblKodMiastoVal.Text = p.KodMiastoValidate();
+        }
+
+        private void txtTelefon_TextChanged(object sender, EventArgs e)
+        {
+            p = new PersonValidate(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text, txtEmail.Text);
+            lblTelefonVal.Text = p.TelefonValidate();
         }
     }
 }

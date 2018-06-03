@@ -31,6 +31,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblEmailVal = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblKodMiastoVal = new System.Windows.Forms.Label();
             this.lblTelefonVal = new System.Windows.Forms.Label();
             this.lblUlicaNrVal = new System.Windows.Forms.Label();
@@ -46,9 +49,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnAnuluj = new System.Windows.Forms.Button();
             this.btnZapiszPerson = new System.Windows.Forms.Button();
-            this.lblEmailVal = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -101,6 +101,35 @@
             this.panel2.Size = new System.Drawing.Size(764, 556);
             this.panel2.TabIndex = 1;
             // 
+            // lblEmailVal
+            // 
+            this.lblEmailVal.AutoSize = true;
+            this.lblEmailVal.Location = new System.Drawing.Point(227, 439);
+            this.lblEmailVal.Name = "lblEmailVal";
+            this.lblEmailVal.Size = new System.Drawing.Size(34, 22);
+            this.lblEmailVal.TabIndex = 14;
+            this.lblEmailVal.Text = "    ";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(219, 384);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmail.Multiline = true;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(516, 42);
+            this.txtEmail.TabIndex = 13;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(51, 383);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 22);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "EMAIL";
+            // 
             // lblKodMiastoVal
             // 
             this.lblKodMiastoVal.AutoSize = true;
@@ -145,6 +174,7 @@
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(516, 42);
             this.txtTelefon.TabIndex = 7;
+            this.txtTelefon.TextChanged += new System.EventHandler(this.txtTelefon_TextChanged);
             // 
             // lblTelefon
             // 
@@ -253,35 +283,6 @@
             this.btnZapiszPerson.Text = "ZAPISZ";
             this.btnZapiszPerson.UseVisualStyleBackColor = false;
             this.btnZapiszPerson.Click += new System.EventHandler(this.BtnZapiszPerson_Click);
-            // 
-            // lblEmailVal
-            // 
-            this.lblEmailVal.AutoSize = true;
-            this.lblEmailVal.Location = new System.Drawing.Point(227, 439);
-            this.lblEmailVal.Name = "lblEmailVal";
-            this.lblEmailVal.Size = new System.Drawing.Size(34, 22);
-            this.lblEmailVal.TabIndex = 14;
-            this.lblEmailVal.Text = "    ";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(219, 384);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtEmail.Multiline = true;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(516, 42);
-            this.txtEmail.TabIndex = 13;
-            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(51, 383);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 22);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "EMAIL";
             // 
             // frmInsertPerson
             // 
