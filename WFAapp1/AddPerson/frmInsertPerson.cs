@@ -18,9 +18,6 @@ namespace WFAapp1
             InitializeComponent();
         }
 
-        //Person p;
-
-        //Menu m = new Menu();
 
         private void BtnZapiszPerson_Click(object sender, EventArgs e)
         {
@@ -67,6 +64,26 @@ namespace WFAapp1
         {
             p = new PersonValidate(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text, txtEmail.Text);
             lblTelefonVal.Text = p.TelefonValidate();
+        }
+
+        private void lblTelefon_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip mToolTip = new System.Windows.Forms.ToolTip();
+            mToolTip.SetToolTip(this.lblTelefon, "przyjmuję nr tel. w formacie\n"+
+                "xxx xx xx xx\n"+
+                "xxx xx-xx-xx\n" +
+                "(xxx) xx xx xx\n" +
+                "(xxx) xx-xx-xx\n" +
+                "xx xxx xx xx\n" +
+                "xx xxx-xx-xx\n" +
+                "(xx) xxx xx xx\n" +
+                "(xx) xxx-xx-xx\n"
+                );
+        }
+
+        private void lblTelefon_MouseClick(object sender, MouseEventArgs e)
+        {
+            
         }
     }
 }

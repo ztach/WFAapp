@@ -69,7 +69,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(146, 9);
+            this.label1.Location = new System.Drawing.Point(151, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(437, 29);
             this.label1.TabIndex = 0;
@@ -185,6 +185,8 @@
             this.lblTelefon.Size = new System.Drawing.Size(101, 22);
             this.lblTelefon.TabIndex = 6;
             this.lblTelefon.Text = "TELEFON";
+            this.lblTelefon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblTelefon_MouseClick);
+            this.lblTelefon.MouseHover += new System.EventHandler(this.lblTelefon_MouseHover);
             // 
             // txtUlicaNr
             // 
@@ -294,7 +296,7 @@
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmInsertPerson";
-            this.Text = "frmInsertPerson";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FrmInsertPerson_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
