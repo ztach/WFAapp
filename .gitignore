@@ -206,6 +206,8 @@ UpgradeLog*.htm
 # SQLite files
 *.sqlite
 *.s3db
+*.sql
+*.json
 
 # Business Intelligence projects
 *.rdl.data
