@@ -18,9 +18,6 @@ namespace WFAapp1.Dostep
         {
             InitializeComponent();
         }
-        /*public static string myFileName { get; set; }
-        public static string myPath { get; set; }*/
-
 
         private void frmDostep_Load(object sender, EventArgs e)
         {

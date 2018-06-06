@@ -197,8 +197,7 @@ namespace WFAapp1
             if (!LoginValidate.statusWejscia)
             {
                 frmLoginAdmin la = new frmLoginAdmin();
-                //la.MdiParent = this;
-                la.Show();
+                la.ShowDialog();
                 string wyszlo = la.ToString();
             }
 
