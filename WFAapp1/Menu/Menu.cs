@@ -149,12 +149,13 @@ namespace WFAapp1
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            //ile opcji menu z dostępem do bazy
             SaticClass.countMenuBase = 2;
-
+            //blokuję jeśli nie ma dostępu do bazy
             idbf.CheckIniDataBase( menuStrip,false);
-
+            //ukrywam panel z helpem
             panelHelp.Visible = false;
-
+            //apka na cały monitor
             this.WindowState = FormWindowState.Maximized;
         }
 
@@ -216,6 +217,11 @@ namespace WFAapp1
         private void listaWypozyToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Menu_Activated(object sender, EventArgs e)
+        {
+            idbf.CheckIniDataBase(menuStrip , false);
         }
     }
 }

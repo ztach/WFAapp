@@ -502,6 +502,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Menu";
             this.Text = "  ";
+            this.Activated += new System.EventHandler(this.Menu_Activated);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
