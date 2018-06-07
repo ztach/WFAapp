@@ -219,9 +219,12 @@ namespace WFAapp1
 
         }
 
-        private void Menu_Activated(object sender, EventArgs e)
+        private void Menu_MdiChildActivate(object sender, EventArgs e)
         {
-            idbf.CheckIniDataBase(menuStrip , false);
+            idbf.CheckIniDataBase(menuStrip, false);
         }
+
+        //idbf.CheckIniDataBase(menuStrip, false);
+
     }
 }
