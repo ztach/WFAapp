@@ -23,7 +23,7 @@ namespace WFAapp1
         {
             PersonCommands myConnd = new PersonCommands(IniDataBaseFile.conPath, IniDataBaseFile.conFile);
            // myConnd.SqlInsertOsoba(txtImieNazwisko.Text,txtKodMiasto.Text, txtUlicaNr.Text, txtPesel.Text);
-           /* string s = "select * from osoba where osobaid=1";
+            string s = "select * from osoba where osobaid=1";
             var pp = myConnd.SqlReturnOneRecord(s); 
 
             PersonValidate person = new PersonValidate(pp.ImieNazwisko,pp.KodMiasto,pp.ulicaNr,pp.Telefon,pp.Email);
@@ -33,7 +33,7 @@ namespace WFAapp1
            
 
             MessageBox.Show(person.ImieNazwisko + " " + person.KodMiasto + " TEL: "+ person.Telefon +" EMAIL: "+  person.Email);
-            */
+            
             this.Close();
         }
         
@@ -81,9 +81,12 @@ namespace WFAapp1
                 );
         }
 
-        private void lblTelefon_MouseClick(object sender, MouseEventArgs e)
+
+
+        private void txtImieNazwisko_TextChanged(object sender, EventArgs e)
         {
-            
+            p = new PersonValidate(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text, txtEmail.Text);
+            lblINazwiskoVal.Text = p.ImieNazwiskoValidate();
         }
     }
 }

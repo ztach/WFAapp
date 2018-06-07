@@ -210,6 +210,12 @@ UpgradeLog*.htm
 *.sql
 *.json
 
+#plik z bazami
+WFAapp1/Baza/
+
+#bacze
+*.bat
+
 # Business Intelligence projects
 *.rdl.data
 *.bim.layout

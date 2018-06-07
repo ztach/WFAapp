@@ -79,11 +79,18 @@ namespace WFAapp1.Classes
         static Regex ValidEmailRegex = CreateValidEmailRegex();
         static Regex ValidKodMiastoRegex = CreateValidKodMiastoRegex();
         static Regex ValidTelefonRegex = CreateValidTelefonRegex();
+        static Regex ValidImieNazwiskoRegex = CreateValidImieNazwiskoRegex();
+
+        private static Regex CreateValidImieNazwiskoRegex()
+        {
+            string validImieNazwiskoPattern = @".+";
+
+            return new Regex(validImieNazwiskoPattern, RegexOptions.IgnoreCase);
+        }
 
 
         private static Regex CreateValidEmailRegex()
         {
-  
             string validEmailPattern = @"^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$";
 
             return new Regex(validEmailPattern, RegexOptions.IgnoreCase);
@@ -105,6 +112,17 @@ namespace WFAapp1.Classes
             //^(?(\d{3})\d{3} \d{2}(?(-)-| )\d{2}(?(-)-| )\d{2}|(?(\()\(\d{3}\) \d{2}(?(-)-| )\d{2}(?(-)-| )\d{2}|\d{2} \d{3}(?(-)-| )\d{2}(?(-)-| )\d{2}))$
 
             return new Regex(validTelefonPattern, RegexOptions.IgnoreCase);
+        }
+
+        public string ImieNazwiskoValidate()
+        {
+            string wynik = "popraw imie lub nazwisko";
+            imieNazwiskoIsOk = ValidImieNazwiskoRegex.IsMatch(ImieNazwisko);
+            if (imieNazwiskoIsOk)
+            {
+                wynik = "ok";
+            }
+            return wynik;
         }
 
 
@@ -131,19 +149,6 @@ namespace WFAapp1.Classes
         }
 
 
-        public string ImieNazwiskoValidate()
-        {
-            string wynik = "ok";
-            imieNazwiskoIsOk = true;
-            if (ImieNazwisko.Length < 1)
-            {
-                wynik = "wpisz nazwisko";
-                imieNazwiskoIsOk = false;
-            }
-            return wynik;
-        }
-
-
         public string KodMiastoValidate()
         {
             string wynik = "wpisz kod i miasto";
@@ -155,7 +160,6 @@ namespace WFAapp1.Classes
             }
             return wynik;
         }
-
 
 
         public Person ShowPerson(Person p)
