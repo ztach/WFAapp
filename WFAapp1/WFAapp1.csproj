@@ -97,6 +97,7 @@
     <Compile Include="Classes\PersonCommands.cs" />
     <Compile Include="Classes\Person.cs" />
     <Compile Include="Classes\PersonValidate.cs" />
+    <Compile Include="Classes\SaticClass.cs" />
     <Compile Include="Classes\SQLiteCommands.cs" />
     <Compile Include="Dostep\frmDostep.cs">
       <SubType>Form</SubType>

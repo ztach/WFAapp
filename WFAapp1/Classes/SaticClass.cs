@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace WFAapp1.Classes
 {
-    class SaticClass
+    public static class SaticClass
     {
+        public static bool statusWejscia { get; set; }
+        private static int _countMenuBase;
+        public static int countMenuBase
+        {
+            get
+            {
+                return _countMenuBase;
+            }
+            set
+            {
+                _countMenuBase = value;
+            }
+        }
+
+
     }
 }

@@ -14,8 +14,6 @@ namespace WFAapp1.Classes
             base(user,pass)
         {
         }
-        public static bool statusWejscia { get; set; }
-
         public string userMessage { get; set; }
         public string passMessage { get; set; }
 

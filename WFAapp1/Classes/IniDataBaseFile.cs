@@ -144,20 +144,23 @@ namespace WFAapp1.Classes
 
             if (!File.Exists(IniDataBaseFile.conPath + IniDataBaseFile.conFile))
             {
-                /*MessageBox.Show(
-                    " podana ścieżka: " + IniDataBaseFile.conPath + " jest niepawidłowa!!!\n" +
-                    "                 lub\n" +
-                    " podany plik: " + IniDataBaseFile.conFile + " jest nieprawidlowy !!!!" +
-                    "\n\n" +
-                    "puszukaj pliku .ini i zmień dostęp!!!" +
-                    "\n\n" +
-                    "           szczegóły opisałem w pomocy (Help)"
-                    );*/
                 jest = false;
             }
-
             return jest;
-
         }
+
+        public void CheckIniDataBase( MenuStrip ms, bool ft)
+        {
+            getIniFile();
+            getIniPath();
+            if (!spraedzPlik("1"))
+            {
+                for (int i = 0; i < SaticClass.countMenuBase; i++)
+                {
+                    ms.Items[i].Enabled = ft;
+                }
+            }
+        }
+
     }
 }

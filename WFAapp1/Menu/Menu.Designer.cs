@@ -66,16 +66,16 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gdzieJestBazaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dostepToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.WczytajInnaBazeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.panelHelp = new System.Windows.Forms.Panel();
             this.btnExitX = new System.Windows.Forms.Button();
+            this.panelHelp = new System.Windows.Forms.Panel();
             this.panelSubHelp = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.dostepToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.WczytajInnaBazeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.panelHelp.SuspendLayout();
@@ -383,6 +383,22 @@
             this.adminToolStripMenuItem.Text = "Admin";
             this.adminToolStripMenuItem.DropDownOpened += new System.EventHandler(this.adminToolStripMenuItem_DropDownOpened);
             // 
+            // dostepToolStripMenuItem
+            // 
+            this.dostepToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.dostepToolStripMenuItem.Name = "dostepToolStripMenuItem";
+            this.dostepToolStripMenuItem.Size = new System.Drawing.Size(230, 28);
+            this.dostepToolStripMenuItem.Text = "Dostęp";
+            this.dostepToolStripMenuItem.ToolTipText = "ustawia dostęp do bazy";
+            this.dostepToolStripMenuItem.Click += new System.EventHandler(this.dostepToolStripMenuItem_Click);
+            // 
+            // WczytajInnaBazeToolStripMenuItem
+            // 
+            this.WczytajInnaBazeToolStripMenuItem.Name = "WczytajInnaBazeToolStripMenuItem";
+            this.WczytajInnaBazeToolStripMenuItem.Size = new System.Drawing.Size(230, 28);
+            this.WczytajInnaBazeToolStripMenuItem.Text = "Wczytaj inną bazę";
+            this.WczytajInnaBazeToolStripMenuItem.Click += new System.EventHandler(this.WczytajInnaBazeToolStripMenuItem_Click);
+            // 
             // toolStripComboBox1
             // 
             this.toolStripComboBox1.Items.AddRange(new object[] {
@@ -410,19 +426,6 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // panelHelp
-            // 
-            this.panelHelp.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelHelp.BackColor = System.Drawing.Color.Gray;
-            this.panelHelp.Controls.Add(this.btnExitX);
-            this.panelHelp.Controls.Add(this.panelSubHelp);
-            this.panelHelp.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.panelHelp.Location = new System.Drawing.Point(38, 43);
-            this.panelHelp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panelHelp.Name = "panelHelp";
-            this.panelHelp.Size = new System.Drawing.Size(786, 322);
-            this.panelHelp.TabIndex = 4;
-            // 
             // btnExitX
             // 
             this.btnExitX.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -439,6 +442,19 @@
             this.toolTip.SetToolTip(this.btnExitX, "ZAMKNIJ");
             this.btnExitX.UseVisualStyleBackColor = false;
             this.btnExitX.Click += new System.EventHandler(this.btnExitX_Click);
+            // 
+            // panelHelp
+            // 
+            this.panelHelp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panelHelp.BackColor = System.Drawing.Color.Gray;
+            this.panelHelp.Controls.Add(this.btnExitX);
+            this.panelHelp.Controls.Add(this.panelSubHelp);
+            this.panelHelp.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
+            this.panelHelp.Location = new System.Drawing.Point(38, 43);
+            this.panelHelp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelHelp.Name = "panelHelp";
+            this.panelHelp.Size = new System.Drawing.Size(786, 322);
+            this.panelHelp.TabIndex = 4;
             // 
             // panelSubHelp
             // 
@@ -473,22 +489,6 @@
             this.listBox1.Size = new System.Drawing.Size(784, 246);
             this.listBox1.TabIndex = 0;
             // 
-            // dostepToolStripMenuItem
-            // 
-            this.dostepToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.dostepToolStripMenuItem.Name = "dostepToolStripMenuItem";
-            this.dostepToolStripMenuItem.Size = new System.Drawing.Size(230, 28);
-            this.dostepToolStripMenuItem.Text = "Dostęp";
-            this.dostepToolStripMenuItem.ToolTipText = "ustawia dostęp do bazy";
-            this.dostepToolStripMenuItem.Click += new System.EventHandler(this.dostepToolStripMenuItem_Click);
-            // 
-            // WczytajInnaBazeToolStripMenuItem
-            // 
-            this.WczytajInnaBazeToolStripMenuItem.Name = "WczytajInnaBazeToolStripMenuItem";
-            this.WczytajInnaBazeToolStripMenuItem.Size = new System.Drawing.Size(230, 28);
-            this.WczytajInnaBazeToolStripMenuItem.Text = "Wczytaj inną bazę";
-            this.WczytajInnaBazeToolStripMenuItem.Click += new System.EventHandler(this.WczytajInnaBazeToolStripMenuItem_Click);
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -499,7 +499,7 @@
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Menu";
             this.Text = "  ";
             this.Load += new System.EventHandler(this.Menu_Load);

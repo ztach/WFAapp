@@ -26,13 +26,13 @@ namespace WFAapp1.LoginAdmin
 
         private void btnZaloguj_Click(object sender, EventArgs e)
         {
-            LoginValidate.statusWejscia = false;
+            SaticClass.statusWejscia = false;
             //check if eligible to be logged in 
             if (login.IsLoggedIn(user, pass))
             {
                 lblLoginValidate.Text = login.userMessage;
                 lblPassValidate.Text = login.passMessage;
-                LoginValidate.statusWejscia = true;
+                SaticClass.statusWejscia = true;
                 this.Close();
             }
             else
