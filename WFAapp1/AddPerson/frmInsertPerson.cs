@@ -17,7 +17,7 @@ namespace WFAapp1
         {
             InitializeComponent();
         }
-
+        PersonValidate p;
 
         private void BtnZapiszPerson_Click(object sender, EventArgs e)
         {
@@ -26,15 +26,17 @@ namespace WFAapp1
             string s = "select * from osoba where osobaid=1";
             var pp = myConnd.SqlReturnOneRecord(s); 
 
-            PersonValidate person = new PersonValidate(pp.ImieNazwisko,pp.KodMiasto,pp.ulicaNr,pp.Telefon,pp.Email);
+            p = new PersonValidate(pp.ImieNazwisko,pp.KodMiasto,pp.ulicaNr,pp.Telefon,pp.Email);
 
-            lblTelefonVal.Text = person.TelefonValidate();
-            lblEmailVal.Text = person.EmailValidate();
-           
-
-            MessageBox.Show(person.ImieNazwisko + " " + person.KodMiasto + " TEL: "+ person.Telefon +" EMAIL: "+  person.Email);
+            //lblTelefonVal.Text = person.TelefonValidate();
+            //lblEmailVal.Text = person.EmailValidate();
             
-            this.Close();
+            if (PersonValidate.PersonIsOk || p.isPersonOk())
+            {
+                MessageBox.Show(p.ImieNazwisko + " " + p.KodMiasto + " TEL: " + p.Telefon + " EMAIL: " + p.Email);
+                this.Close();
+            }
+            
         }
         
         private void BtnAnuluj_Click(object sender, EventArgs e)
@@ -42,7 +44,7 @@ namespace WFAapp1
             this.Close();
         }
 
-        PersonValidate p;
+        
 
         private void FrmInsertPerson_Load(object sender, EventArgs e)
         {
@@ -87,6 +89,12 @@ namespace WFAapp1
         {
             p = new PersonValidate(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text, txtEmail.Text);
             lblINazwiskoVal.Text = p.ImieNazwiskoValidate();
+        }
+
+        private void txtUlicaNr_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            p = new PersonValidate(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text, txtEmail.Text);
+            lblUlicaNrVal.Text = p.UlicaNrValidate();
         }
     }
 }
