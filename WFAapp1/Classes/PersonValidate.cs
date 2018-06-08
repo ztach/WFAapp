@@ -15,8 +15,20 @@ namespace WFAapp1.Classes
         public static bool ulicaNrIsOk { get; set; }
         public static bool telefonIsOk { get; set; }
         public static bool emailIsOk { get; set; }
-        public static bool PersonIsOk = imieNazwiskoIsOk && kodMiastoIsOk && ulicaNrIsOk && telefonIsOk && emailIsOk;
-        
+
+        public static bool PersonIsOk
+        {
+            get
+            {
+                return imieNazwiskoIsOk && kodMiastoIsOk && ulicaNrIsOk && telefonIsOk && emailIsOk;
+            }
+            set
+            {
+                PersonIsOk = imieNazwiskoIsOk && kodMiastoIsOk && ulicaNrIsOk && telefonIsOk && emailIsOk;
+            }
+        }
+            
+
         /*
                 private static bool _imieNazwiskoIsOk;
                 private static bool _kodMiastoIsOk;
@@ -91,12 +103,13 @@ namespace WFAapp1.Classes
         static Regex ValidImieNazwiskoRegex = CreateValidImieNazwiskoRegex();
         static Regex ValidUlicaNrRegex = CreateValidUlicaNrRegex();
 
-        
+
         private static Regex CreateValidUlicaNrRegex()
         {
             string validUlicaNrPattern = @"\w+ *\w*";
 
             return new Regex(validUlicaNrPattern, RegexOptions.IgnoreCase);
+        }
 
 
         private static Regex CreateValidImieNazwiskoRegex()

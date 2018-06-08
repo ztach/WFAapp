@@ -26,15 +26,15 @@ namespace WFAapp1
             string s = "select * from osoba where osobaid=1";
             var pp = myConnd.SqlReturnOneRecord(s); 
 
-            p = new PersonValidate(pp.ImieNazwisko,pp.KodMiasto,pp.ulicaNr,pp.Telefon,pp.Email);
+            PersonValidate person = new PersonValidate(pp.ImieNazwisko,pp.KodMiasto,pp.ulicaNr,pp.Telefon,pp.Email);
 
-            //lblTelefonVal.Text = person.TelefonValidate();
-            //lblEmailVal.Text = person.EmailValidate();
-            
-            if (PersonValidate.PersonIsOk || p.isPersonOk())
+            p = new PersonValidate(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text, txtEmail.Text);
+
+
+            if (PersonValidate.PersonIsOk)
             {
                 MessageBox.Show(p.ImieNazwisko + " " + p.KodMiasto + " TEL: " + p.Telefon + " EMAIL: " + p.Email);
-                this.Close();
+                //this.Close();
             }
             
         }
