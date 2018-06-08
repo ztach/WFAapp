@@ -138,7 +138,7 @@ namespace WFAapp1.Classes
 
         }
 
-        public static bool spraedzPlik(string kom)
+        public static bool sprawdzPlik(string kom)
         {
             bool jest = true;
 
@@ -153,7 +153,7 @@ namespace WFAapp1.Classes
         {
             getIniFile();
             getIniPath();
-            if (!spraedzPlik("1"))
+            if (!sprawdzPlik("1"))
             {
                 for (int i = 0; i < SaticClass.countMenuBase; i++)
                 {

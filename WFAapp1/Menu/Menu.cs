@@ -224,7 +224,5 @@ namespace WFAapp1
             idbf.CheckIniDataBase(menuStrip, false);
         }
 
-        //idbf.CheckIniDataBase(menuStrip, false);
-
     }
 }

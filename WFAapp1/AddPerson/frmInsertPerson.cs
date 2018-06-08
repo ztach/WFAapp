@@ -17,7 +17,7 @@ namespace WFAapp1
         {
             InitializeComponent();
         }
-
+        PersonValidate p;
 
         private void BtnZapiszPerson_Click(object sender, EventArgs e)
         {
@@ -28,13 +28,15 @@ namespace WFAapp1
 
             PersonValidate person = new PersonValidate(pp.ImieNazwisko,pp.KodMiasto,pp.ulicaNr,pp.Telefon,pp.Email);
 
-            lblTelefonVal.Text = person.TelefonValidate();
-            lblEmailVal.Text = person.EmailValidate();
-           
+            p = new PersonValidate(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text, txtEmail.Text);
 
-            MessageBox.Show(person.ImieNazwisko + " " + person.KodMiasto + " TEL: "+ person.Telefon +" EMAIL: "+  person.Email);
+
+            if (PersonValidate.PersonIsOk)
+            {
+                MessageBox.Show(p.ImieNazwisko + " " + p.KodMiasto + " TEL: " + p.Telefon + " EMAIL: " + p.Email);
+                //this.Close();
+            }
             
-            this.Close();
         }
         
         private void BtnAnuluj_Click(object sender, EventArgs e)
@@ -42,7 +44,7 @@ namespace WFAapp1
             this.Close();
         }
 
-        PersonValidate p;
+        
 
         private void FrmInsertPerson_Load(object sender, EventArgs e)
         {
@@ -87,6 +89,12 @@ namespace WFAapp1
         {
             p = new PersonValidate(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text, txtEmail.Text);
             lblINazwiskoVal.Text = p.ImieNazwiskoValidate();
+        }
+
+        private void txtUlicaNr_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            p = new PersonValidate(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text, txtEmail.Text);
+            lblUlicaNrVal.Text = p.UlicaNrValidate();
         }
     }
 }
