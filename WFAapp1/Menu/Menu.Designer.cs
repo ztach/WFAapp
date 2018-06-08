@@ -505,6 +505,7 @@
             this.Name = "Menu";
             this.Text = "  ";
             this.Load += new System.EventHandler(this.Menu_Load);
+            this.MdiChildActivate += new System.EventHandler(this.Menu_MdiChildActivate);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);

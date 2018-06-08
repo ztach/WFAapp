@@ -13,11 +13,13 @@ using WFAapp1.Help;
 using WFAapp1.ListaKsiazek;
 using WFAapp1.LoginAdmin;
 
+
 namespace WFAapp1
 {
     public partial class Menu : Form
     {
         private int childFormNumber = 0;
+        IniDataBaseFile idbf = new IniDataBaseFile();
 
         public Menu()
         {
@@ -144,26 +146,16 @@ namespace WFAapp1
 
         }
 
-        private void CheckIniDataBase()
-        {
-            IniDataBaseFile.getIniFile();
-            IniDataBaseFile.getIniPath();
-            if (!IniDataBaseFile.spraedzPlik("1"))
-            {
-                // Application.Exit();
-                menuStrip.Items[0].Enabled = false;
-                menuStrip.Items[1].Enabled = false;
-
-            }
-        }
 
         private void Menu_Load(object sender, EventArgs e)
         {
-
-            CheckIniDataBase();
-
+            //ile opcji menu z dostępem do bazy
+            SaticClass.countMenuBase = 2;
+            //blokuję jeśli nie ma dostępu do bazy
+            idbf.CheckIniDataBase( menuStrip,false);
+            //ukrywam panel z helpem
             panelHelp.Visible = false;
-
+            //apka na cały monitor
             this.WindowState = FormWindowState.Maximized;
         }
 
@@ -194,7 +186,7 @@ namespace WFAapp1
 
         private void adminToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
         {
-            if (!LoginValidate.statusWejscia)
+            if (!SaticClass.statusWejscia)
             {
                 frmLoginAdmin la = new frmLoginAdmin();
                 la.ShowDialog();
@@ -209,18 +201,12 @@ namespace WFAapp1
             fd.MdiParent = this;
             fd.Show();
 
-            if (!IniDataBaseFile.spraedzPlik("1"))
-            {
-                // Application.Exit();
-                menuStrip.Items[0].Enabled = true;
-                menuStrip.Items[1].Enabled = true;
-            }
-
+            idbf.CheckIniDataBase(menuStrip, true);
         }
 
         private void bazaToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
         {
-            CheckIniDataBase();
+            idbf.CheckIniDataBase(menuStrip,false);
         }
 
         private void listaCzytelnikowToolStripMenuItem_Click(object sender, EventArgs e)
@@ -232,5 +218,13 @@ namespace WFAapp1
         {
 
         }
+
+        private void Menu_MdiChildActivate(object sender, EventArgs e)
+        {
+            idbf.CheckIniDataBase(menuStrip, false);
+        }
+
+        //idbf.CheckIniDataBase(menuStrip, false);
+
     }
 }

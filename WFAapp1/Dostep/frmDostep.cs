@@ -30,6 +30,9 @@ namespace WFAapp1.Dostep
         {
             IniDataBaseFile.getIniFile(txtNazwaPliku.Text);
             IniDataBaseFile.getIniPath(txtSciezkaDostepu.Text);
+            IniDataBaseFile idbf = new IniDataBaseFile();
+
+          
             this.Close();
         }
         
