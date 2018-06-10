@@ -149,16 +149,15 @@ namespace WFAapp1.Classes
             return jest;
         }
 
-        public void CheckIniDataBase( MenuStrip ms)
+        public void CheckIniDataBase(MenuStrip ms)
         {
             getIniFile();
             getIniPath();
-            if (!sprawdzPlik("1"))
+            bool ft = sprawdzPlik("1");
+            for (int i = 0; i < SaticClass.countMenuBase; i++)
             {
-                for (int i = 0; i < SaticClass.countMenuBase; i++)
-                {
-                    ms.Items[i].Enabled = ft;
-                }
+                ms.Items[i].Enabled = ft;
+            }
 
         }
 
