@@ -152,7 +152,7 @@ namespace WFAapp1
             //ile opcji menu z dostępem do bazy
             SaticClass.countMenuBase = 2;
             //blokuję jeśli nie ma dostępu do bazy
-            idbf.CheckIniDataBase( menuStrip,false);
+            idbf.CheckIniDataBase( menuStrip);
             //ukrywam panel z helpem
             panelHelp.Visible = false;
             //apka na cały monitor
@@ -201,12 +201,12 @@ namespace WFAapp1
             fd.MdiParent = this;
             fd.Show();
 
-            idbf.CheckIniDataBase(menuStrip, true);
+            idbf.CheckIniDataBase(menuStrip);
         }
 
         private void bazaToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
         {
-            idbf.CheckIniDataBase(menuStrip,false);
+            idbf.CheckIniDataBase(menuStrip);
         }
 
         private void listaCzytelnikowToolStripMenuItem_Click(object sender, EventArgs e)
@@ -221,7 +221,7 @@ namespace WFAapp1
 
         private void Menu_MdiChildActivate(object sender, EventArgs e)
         {
-            idbf.CheckIniDataBase(menuStrip, false);
+            idbf.CheckIniDataBase(menuStrip);
         }
 
         //idbf.CheckIniDataBase(menuStrip, false);
