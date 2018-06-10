@@ -49,7 +49,7 @@ namespace WFAapp1
 
             SQLiteCommands myConnn = new SQLiteCommands(IniDataBaseFile.conPath, IniDataBaseFile.conFile);
             
-            txtWynik.Text = myConnn.SqlExecuteOneValue(mquery);
+            txtWynik.Text = myConnn.SqlReturnOneValue(mquery);
 
             //
             // pobieram informacje o wypożyczonych książkach osoby j.w.

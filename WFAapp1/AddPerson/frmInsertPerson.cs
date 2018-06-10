@@ -22,19 +22,48 @@ namespace WFAapp1
         private void BtnZapiszPerson_Click(object sender, EventArgs e)
         {
             PersonCommands myConnd = new PersonCommands(IniDataBaseFile.conPath, IniDataBaseFile.conFile);
-           // myConnd.SqlInsertOsoba(txtImieNazwisko.Text,txtKodMiasto.Text, txtUlicaNr.Text, txtPesel.Text);
-            string s = "select * from osoba where osobaid=1";
-            var pp = myConnd.SqlReturnOneRecord(s); 
-
-            PersonValidate person = new PersonValidate(pp.ImieNazwisko,pp.KodMiasto,pp.ulicaNr,pp.Telefon,pp.Email);
+           // 
+            //string s = "select * from osoba where osobaid=1";
+            //var pp = myConnd.SqlReturnOneRecord(s);
+            //PersonValidate person = new PersonValidate(pp.ImieNazwisko,pp.KodMiasto,pp.ulicaNr,pp.Telefon,pp.Email);
 
             p = new PersonValidate(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text, txtEmail.Text);
 
+            string personExists = "select count(*) from osoba "+
+                "where ImieNazwisko = "+ "\"" + txtImieNazwisko.Text + "\"" +
+                " and KodMiasto = " + "\"" + txtKodMiasto.Text + "\"" +
+                "and ulicaNr = " + "\"" + txtUlicaNr.Text + "\"";
 
+            string personCount = myConnd.SqlReturnOneValue(personExists);
+            
             if (PersonValidate.PersonIsOk)
             {
-                MessageBox.Show(p.ImieNazwisko + " " + p.KodMiasto + " TEL: " + p.Telefon + " EMAIL: " + p.Email);
-                //this.Close();
+                
+                if (personCount != "0")
+                {
+                    MessageBox.Show("istnieje już w bazie osoba:\n\n" + p.ImieNazwisko + ",\n" + p.KodMiasto + ",\n" + p.ulicaNr);
+                }
+                else
+                {
+                    DialogResult dialogResult = MessageBox.Show("Czy zapisać osobę?", "ZAPIS OSOBY", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        myConnd.SqlInsertOsoba(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text,txtEmail.Text);
+                        txtImieNazwisko.Text = "";
+                        txtKodMiasto.Text = "";
+                        txtUlicaNr.Text = "";
+                        txtTelefon.Text = "";
+                        txtEmail.Text = "";
+                    }
+                    else if (dialogResult == DialogResult.No)
+                    {
+                        this.Close();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Błędnie wypełnione informacje!!!");
             }
             
         }

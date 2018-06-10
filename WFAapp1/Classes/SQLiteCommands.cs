@@ -31,7 +31,7 @@ namespace WFAapp1.Classes
             }
         }
 
-        public string SqlExecuteOneValue(string sql)
+        public string SqlReturnOneValue(string sql)
         {
             OpenConnection();
             sqlCommandmd = new SQLiteCommand(sql)
