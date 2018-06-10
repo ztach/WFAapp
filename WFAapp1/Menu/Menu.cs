@@ -109,30 +109,36 @@ namespace WFAapp1
 
         private void ksiegarniaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmKtoPozyczyl f = new frmKtoPozyczyl();
-            f.MdiParent = this;
+            frmKtoPozyczyl f = new frmKtoPozyczyl
+            {
+                MdiParent = this
+            };
             f.WindowState = FormWindowState.Maximized;
             f.Show();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmOProgramie f = new frmOProgramie();
-            f.MdiParent = this;
+            frmOProgramie f = new frmOProgramie
+            {
+                MdiParent = this
+            };
+
             f.Show();
         }
 
         private void gdzieJestBazaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*frmGdzieJestBaza1 f = new frmGdzieJestBaza1();
-            f.Show();*/
             panelHelp.Visible = !panelHelp.Visible;
         }
 
         private void wprowadzOsobeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmInsertPerson f = new frmInsertPerson();
-            f.MdiParent = this;
+            frmInsertPerson f = new frmInsertPerson
+            {
+                MdiParent = this
+            };
+            
             f.Show();
         }
 
@@ -152,7 +158,7 @@ namespace WFAapp1
             //ile opcji menu z dostępem do bazy
             SaticClass.countMenuBase = 2;
             //blokuję jeśli nie ma dostępu do bazy
-            idbf.CheckIniDataBase( menuStrip,false);
+            idbf.CheckIniDataBase( menuStrip);
             //ukrywam panel z helpem
             panelHelp.Visible = false;
             //apka na cały monitor
@@ -171,8 +177,10 @@ namespace WFAapp1
 
         private void listaKsiazekToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmListaKsiazek lk = new frmListaKsiazek();
-            lk.MdiParent = this;
+            frmListaKsiazek lk = new frmListaKsiazek
+            {
+                MdiParent = this
+            };
 
             lk.Show();
 
@@ -197,16 +205,19 @@ namespace WFAapp1
 
         private void dostepToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDostep fd = new frmDostep();
-            fd.MdiParent = this;
+            frmDostep fd = new frmDostep
+            {
+                MdiParent = this
+            };
+
             fd.Show();
 
-            idbf.CheckIniDataBase(menuStrip, true);
+            CheckIniDataBaseMS();
         }
 
         private void bazaToolStripMenuItem_DropDownOpened(object sender, EventArgs e)
         {
-            idbf.CheckIniDataBase(menuStrip,false);
+            CheckIniDataBaseMS();
         }
 
         private void listaCzytelnikowToolStripMenuItem_Click(object sender, EventArgs e)
@@ -221,7 +232,12 @@ namespace WFAapp1
 
         private void Menu_MdiChildActivate(object sender, EventArgs e)
         {
-            idbf.CheckIniDataBase(menuStrip, false);
+            CheckIniDataBaseMS();
+        }
+
+        private void CheckIniDataBaseMS()
+        {
+            idbf.CheckIniDataBase(menuStrip);
         }
 
     }

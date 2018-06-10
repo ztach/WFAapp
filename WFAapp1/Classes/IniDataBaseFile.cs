@@ -149,7 +149,7 @@ namespace WFAapp1.Classes
             return jest;
         }
 
-        public void CheckIniDataBase( MenuStrip ms, bool ft)
+        public void CheckIniDataBase( MenuStrip ms)
         {
             getIniFile();
             getIniPath();
@@ -159,7 +159,7 @@ namespace WFAapp1.Classes
                 {
                     ms.Items[i].Enabled = ft;
                 }
-            }
+
         }
 
     }
