@@ -105,6 +105,12 @@
     <Compile Include="Dostep\frmDostep.Designer.cs">
       <DependentUpon>frmDostep.cs</DependentUpon>
     </Compile>
+    <Compile Include="komunikaty\YesNo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="komunikaty\YesNo.Designer.cs">
+      <DependentUpon>YesNo.cs</DependentUpon>
+    </Compile>
     <Compile Include="KtoPozyczyl\frmKtoPozyczyl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Dostep\frmDostep.resx">
       <DependentUpon>frmDostep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="komunikaty\YesNo.resx">
+      <DependentUpon>YesNo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KtoPozyczyl\frmKtoPozyczyl.resx">
       <DependentUpon>frmKtoPozyczyl.cs</DependentUpon>
@@ -221,6 +230,7 @@
   <ItemGroup>
     <None Include="Resources\gw4.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.108.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net451\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
