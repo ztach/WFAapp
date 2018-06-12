@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFAapp1.Classes;
+using WFAapp1.komunikaty;
 
 namespace WFAapp1
 {
@@ -45,10 +46,11 @@ namespace WFAapp1
                 }
                 else
                 {
+                    
                     DialogResult dialogResult = MessageBox.Show("Czy zapisać osobę?", "ZAPIS OSOBY", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        myConnd.SqlInsertOsoba(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text,txtEmail.Text);
+                        myConnd.SqlInsertOsoba(txtImieNazwisko.Text, txtKodMiasto.Text, txtUlicaNr.Text, txtTelefon.Text, txtEmail.Text);
                         txtImieNazwisko.Text = "";
                         txtKodMiasto.Text = "";
                         txtUlicaNr.Text = "";
@@ -58,7 +60,9 @@ namespace WFAapp1
                     else if (dialogResult == DialogResult.No)
                     {
                         this.Close();
+                            
                     }
+                    
                 }
             }
             else
