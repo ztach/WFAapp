@@ -53,8 +53,8 @@ namespace WFAapp1
 
             //
             // pobieram informacje o wypożyczonych książkach osoby j.w.
-            //
-            mquery = "select autor,tytul,odKiedy,DoKiedy,czas  from KtoCoKiedyWypozyczylView where osobaId=" + lblOsobaId.Text;
+            // autor,tytul,odKiedy,DoKiedy,czas
+            mquery = "select *  from KtoCoKiedyWypozyczylView where osobaId=" + lblOsobaId.Text;
 
             OpenDataBase odb = new OpenDataBase
             {
@@ -74,6 +74,7 @@ namespace WFAapp1
 
         private void ReturnOsobaId(DataGridViewCellEventArgs ez)
         {
+
             if (ez.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridView1.Rows[ez.RowIndex];
@@ -81,6 +82,19 @@ namespace WFAapp1
             }
 
         }
+
+        private void ReturnOsobaKsiazkaId(DataGridViewCellEventArgs ez)
+        {
+
+            if (ez.RowIndex >= 0)
+            {
+                DataGridViewRow rowz = this.dataGridView2.Rows[ez.RowIndex];
+                label2.Text = rowz.Cells[6].Value.ToString();
+                label3.Text = rowz.Cells[7].Value.ToString();
+            }
+
+        }
+
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -122,6 +136,11 @@ namespace WFAapp1
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             Button1_Click(sender,e);
+        }
+
+        private void dataGridView2_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            ReturnOsobaKsiazkaId(e);
         }
     }
 }

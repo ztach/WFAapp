@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using WFAapp1.Classes;
 using WFAapp1.Dostep;
 using WFAapp1.Help;
-using WFAapp1.komunikaty;
 using WFAapp1.ListaKsiazek;
 using WFAapp1.LoginAdmin;
 
@@ -145,6 +144,7 @@ namespace WFAapp1
 
         private void WprowadzKsiazkeTSMenuItem_Click(object sender, EventArgs e)
         {
+
 
         }
 
